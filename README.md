@@ -51,8 +51,7 @@ We analyzed the distribution of key features to understand the dataset better:
 1. **Calories**: The calorie distribution is highly skewed, with most recipes falling under 500 calories.  
 2. **Average Rating**: Ratings are concentrated around 4 and 5, with very few low ratings.  
 
-![INSERT IMAGE LINK]  
-*Figure: Histogram of Calories*  
+(Inserting Graph Here)
 
 ---
 
@@ -61,8 +60,7 @@ To investigate relationships between features, we explored:
 1. **Calories vs. Average Rating**: Recipes with higher calories tend to have slightly higher ratings.  
 2. **Low Calories vs. Average Rating**: Low-calorie recipes are rated similarly to high-calorie ones, with slightly more variance in ratings for high-calorie recipes.  
 
-![INSERT IMAGE LINK]  
-*Figure: Scatter Plot of Calories vs. Average Rating*  
+(Inserting Graph Here)
 
 ---
 
@@ -71,8 +69,7 @@ We analyzed the relationship between cooking time (`minutes`) and calories:
 - Shorter cooking times are generally associated with lower calorie recipes.  
 - Longer cooking times show greater variability in calorie content.  
 
-![INSERT IMAGE LINK]  
-*Figure: Average Calories by Cooking Time*  
+(Inserting Graph Here)
 
 ---
 
@@ -96,8 +93,7 @@ We tested whether the missingness of `average_rating` depends on:
 
 Using a two-sample t-test, we found a significant difference (p-value = 0.03). High-calorie recipes tend to have higher ratings.  
 
-![INSERT IMAGE LINK]  
-*Figure: Box Plot of Average Ratings by Calorie Category*  
+(Inserting Graph Here)
 
 ---
 
@@ -113,8 +109,7 @@ We aim to predict the average rating of a recipe (`average_rating`) based on its
   - RMSE: 0.84  
   - R²: 0.51  
 
-![INSERT IMAGE LINK]  
-*Figure: Predicted vs. Actual Ratings for Baseline Model*  
+(Inserting Graph Here)
 
 ---
 
@@ -129,8 +124,7 @@ We aim to predict the average rating of a recipe (`average_rating`) based on its
 
 Hyperparameter tuning with GridSearchCV improved the model’s performance by optimizing `max_depth` and `n_estimators`.  
 
-![INSERT IMAGE LINK]  
-*Figure: Predicted vs. Actual Ratings for Final Model*  
+(Inserting Graph Here)
 
 ---
 
@@ -148,8 +142,7 @@ Does the model perform equally well for low-calorie and high-calorie recipes?
 
 Since the p-value is less than 0.05, we reject the null hypothesis. The model performs better for high-calorie recipes, indicating potential bias.  
 
-![INSERT IMAGE LINK]  
-*Figure: Permutation Test Results for Fairness Analysis*  
+(Inserting Graph Here)
 
 ---
 
