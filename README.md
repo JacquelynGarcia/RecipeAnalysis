@@ -266,17 +266,15 @@ The features used for the prediction include `calories`, `total_fat`, `sugar`, `
 
 ## **Baseline Model**  
 
-To establish a starting point for our prediction task, we trained a baseline model using a simple linear regression algorithm. This model was designed to predict the average rating (`average_rating`) of recipes based on three quantitative features: `calories`, `n_ingredients`, and `minutes`. These features were selected because they are continuous numerical variables that directly influence user preferences and recipe ratings.
+For the starting point for our prediction task, we trained a baseline model using a simple linear regression algorithm. This model was designed to predict the `average_rating` of recipes given three features: `calories`, `n_ingredients`, and `minutes`. These features were selected because they are continuous numerical variables that have shown to directly influence recipe ratings.
 
-Before training the model, we addressed missing values in the `average_rating` column by imputing them with the column's mean. This ensures that the dataset is complete and allows the model to learn from the available data without introducing bias from missing values.
+Before training the model, we addressed missing values in the `average_rating` column by imputing them with the column's mean. This ensures that the dataset is complete and allows the model to learn from the available data without introducing bias.
 
 The dataset was split into training and testing sets, with 80% of the data allocated for training and 20% for testing. This approach ensures the model's ability to generalize to unseen data. The baseline model was implemented using the `LinearRegression` algorithm from scikit-learn. The model was trained on the selected features, and its performance was evaluated using Root Mean Squared Error (RMSE) and R² score.
 
-The results of the baseline model showed an RMSE of **0.491**, indicating the average prediction error, and an R² score of **0.0002**, suggesting that the model explains only a negligible amount of variance in the target variable. These metrics reveal that the baseline model performs poorly in predicting average ratings and serves primarily as a benchmark for comparison with more complex models.
+The results of the baseline model showed an RMSE of **0.491**, indicating the average prediction error, and an R² score of **0.0002**, suggesting that the model explains only a negligible amount of variance in the target variable. These metrics reveal that the baseline model performs horrendously in predicting average ratings and serves as a simple stepping stone to compare against more complex models.
 
-A scatter plot of predicted vs. actual ratings further highlights the limitations of the baseline model, as the predictions closely align with the mean rating and fail to capture meaningful patterns in the data. The dashed red line represents an ideal prediction line where predicted ratings equal actual ratings. The observed deviation from this line underscores the need for improved feature selection and model complexity.
-
-In conclusion, while the baseline model provides a foundation for understanding the prediction problem, its poor performance indicates that it is not sufficient for accurately predicting recipe ratings. Future models will incorporate additional features, better transformations, and more advanced algorithms to enhance predictive accuracy.
+We generated a scatter plot of predicted vs. actual ratings to highlight the limitations of the baseline model. The predictions closely align with the mean rating and do not capture meaningful patterns in the data. The dashed red line represents an ideal prediction line where predicted ratings equal actual ratings. The observed deviation from this line showcases the need for improved feature integration and model complexity.
 
 ![Baseline Model: Predicted vs. Actual Ratings](images/baselinemodel.png)
 
