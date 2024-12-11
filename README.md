@@ -51,24 +51,50 @@ By investigating the relationship between calorie content and ratings, this stud
 ---
 
 ## **Data Cleaning and Exploratory Data Analysis**  
-We conducted the following data cleaning steps to prepare the dataset:  
-1. **Merged Datasets**: Combined `recipes` and `interactions` datasets using recipe IDs.  
-2. **Handled Missing Values**: Replaced missing ratings (0) with `NaN` and created an `average_rating` column for each recipe.  
-3. **Extracted Nutritional Features**: Split the `nutrition` column into individual features (e.g., `calories`, `total_fat`, etc.).  
-4. **Filtered Columns**: Removed irrelevant columns like `tags`, `description`, and `steps`.  
-5. **Created `low_calories` Column**: Defined recipes with calories ≤ 500 as "low-calorie".  
+### **Data Cleaning**
 
-The final cleaned dataset contains 234,429 rows and the following relevant columns:  
+To prepare the data for analysis, we performed several data cleaning steps that ensured the dataset was structured appropriately and contained relevant features. These steps addressed missing values, derived meaningful features, and reduced dimensionality:
 
-| Column | Description |  
-|--------|-------------|  
-| `name` | Recipe name |  
-| `id` | Recipe ID |  
-| `minutes` | Cooking time in minutes |  
-| `n_ingredients` | Number of ingredients |  
-| `average_rating` | Average user rating (1-5) |  
-| `calories` | Total calorie content |  
-| `low_calories` | Boolean indicating if recipe is low-calorie |  
+1. **Handling Missing Values**:
+   - Replaced `0` values in the `rating` column with `NaN`. Ratings are typically on a scale of 1 to 5, so a `0` indicates missing data. This adjustment prevents bias in the ratings analysis and ensures calculations like averages exclude these invalid values.
+
+2. **Splitting Nutrition Information**:
+   - The `nutrition` column, initially a string resembling a list, was split into individual columns: `calories`, `total_fat`, `sugar`, `sodium`, `protein`, `saturated_fat`, and `carbohydrates`. Each column was converted to numeric types to allow for computations and aggregations.
+
+3. **Creating a Boolean Feature for Low-Calorie Recipes**:
+   - Added a new column, `low_calories`, to classify recipes with `calories ≤ 500` as `True` and those with `calories > 500` as `False`. This feature simplifies the analysis of low-calorie recipes compared to others.
+
+4. **One-Hot Encoding of Ingredients**:
+   - Extracted key ingredients (`butter`, `eggs`, `garlic cloves`, `milk`, `olive oil`, `onion`, `pepper`, `salt`, `sugar`, `water`) from the `ingredients` list column and converted them into one-hot encoded binary features. These features indicate whether each ingredient is present (`1`) or absent (`0`) in a recipe, enabling us to analyze the relationship between specific ingredients and ratings.
+
+5. **Dropping Irrelevant or Redundant Columns**:
+   - Removed unnecessary columns such as `description`, `tags`, and `steps`, which were not relevant to our analysis. This step reduced the size of the dataset and focused on features directly related to our research question.
+
+6. **Handling Outliers and Scaling**:
+   - Outliers in the `calories` and `sodium` columns were examined, but no transformations were applied in this stage. Numerical features will be scaled during the modeling phase if necessary.
+
+#### **Impact of Data Cleaning**
+These cleaning steps made the dataset more manageable and allowed us to focus on key features, such as the relationship between `calories` and `average_rating`. By creating derived features like `low_calories` and encoding ingredients, we aligned the dataset with our analysis goals. The cleaned dataset consists of the following relevant columns:
+
+| Column              | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| `name`              | Recipe name                                                                |
+| `id`                | Recipe ID                                                                  |
+| `minutes`           | Time to prepare the recipe (in minutes)                                    |
+| `n_ingredients`     | Number of ingredients in the recipe                                        |
+| `average_rating`    | Average user rating (1-5)                                                  |
+| `calories`          | Total calorie content of the recipe                                        |
+| `low_calories`      | Boolean feature indicating low-calorie recipes (`calories ≤ 500`)          |
+| `butter`            | Indicates presence of butter in the recipe (1 or 0)                       |
+| `eggs`              | Indicates presence of eggs in the recipe (1 or 0)                         |
+| `garlic_cloves`     | Indicates presence of garlic cloves in the recipe (1 or 0)                |
+| `milk`              | Indicates presence of milk in the recipe (1 or 0)                         |
+| `olive_oil`         | Indicates presence of olive oil in the recipe (1 or 0)                    |
+| `onion`             | Indicates presence of onion in the recipe (1 or 0)                        |
+| `pepper`            | Indicates presence of pepper in the recipe (1 or 0)                       |
+| `salt`              | Indicates presence of salt in the recipe (1 or 0)                         |
+| `sugar`             | Indicates presence of sugar in the recipe (1 or 0)                        |
+| `water`             | Indicates presence of water in the recipe (1 or 0)                        |
 
 ---
 
