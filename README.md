@@ -149,7 +149,7 @@ For this analysis, we examined the distribution of key features in our dataset t
 ### **Calories**
 The distribution of calories in recipes is highly skewed to the right. Most recipes on the platform have fewer than 500 calories, while only a small proportion of recipes have extremely high calorie counts. This indicates that lower-calorie recipes dominate the dataset, but there are still a few outliers with significantly higher calorie values.
 
-![Distribution of Calories](images/calories_uni.png)
+![Distribution of Calories](images/average_uni.png)
 
 ---
 
