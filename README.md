@@ -160,11 +160,20 @@ The distribution of average ratings is heavily concentrated around the higher en
 ---
 
 ## **Bivariate Analysis**  
-To investigate relationships between features, we explored:  
-1. **Calories vs. Average Rating**: Recipes with higher calories tend to have slightly higher ratings.  
-2. **Low Calories vs. Average Rating**: Low-calorie recipes are rated similarly to high-calorie ones, with slightly more variance in ratings for high-calorie recipes.  
+For this analysis, we examined relationships between key features in the dataset to uncover potential correlations and trends.
 
-(Inserting Graph Here)
+### Calories vs. Average Rating
+We analyzed the relationship between `calories` and `average_rating`. As shown in the scatter plot below, recipes with higher ratings tend to have a wide range of calorie counts, but there are clusters of low-calorie recipes with high ratings. This indicates that high-rated recipes are not solely calorie-dependent, and other factors may contribute to user preferences.
+
+![Calories vs. Average Rating](images/calvrating.png)
+
+---
+
+### Mean and Median Ratings by Low-Calorie and High-Calorie Recipes
+We grouped recipes into `low-calorie` (≤ 500 calories) and `high-calorie` (> 500 calories) categories to compare their mean and median ratings. The bar plot below demonstrates that both categories have similar mean and median ratings, suggesting that calorie content alone does not heavily influence overall ratings.
+
+![Mean and Median Ratings by Low-Calorie and High-Calorie Recipes](images/bivariate.png)
+
 
 ---
 
