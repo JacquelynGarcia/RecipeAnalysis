@@ -4,7 +4,7 @@
 ---
 
 ## **Overview**  
-This data science project, conducted at UCSD under the supervision of Professor Sam Lau, is aimed at understanding the relationship between calories and ratings. This analysis aims to understand whether recipes with higher calorie counts are rated differently than those with lower calorie counts. We leveraged predictive models to forecast average ratings based on recipe attributes and reported our findings.
+This data science project, conducted at UCSD under the supervision of Professor Sam Lau, is aimed at understanding the relationship between calories and ratings. This analysis is aimed at understand whether recipes with higher calorie counts are rated differently than those with lower calorie counts. We leveraged predictive models to forecast average ratings based on recipe attributes and reported our findings.
 
 ---
 
@@ -13,7 +13,7 @@ With the rise of food bloggers and self-proclaimed 'foodies', we have seen an up
 
 ### Datasets
 
-`Recipes`: Information about 83,782 unique recipes, including nutrition and preparation details.
+`Recipes`: Information in this dataset includes 83,782 unique recipes, including nutrition and preparation details.
 This dataset consists of the following columns:
 
 | Column           | Description                                                                                                                                  |
@@ -31,7 +31,7 @@ This dataset consists of the following columns:
 | `ingredients`    | Text for recipe ingredients                                                                                                                 |
 | `n_ingredients`  | Number of ingredients in recipe                                                                                                             |
 
-`Interactions`: 731,927 user interactions, including ratings and reviews for the recipes.
+`Interactions`: This dataset is composed of 731,927 user interactions, including ratings and reviews for the recipes.
 This dataset's column are as follows:
 
 | Column       | Description               |
@@ -43,12 +43,10 @@ This dataset's column are as follows:
 | `review`     | Review text               |
 
 
-After merging these datasets, we conducted exploratory analysis, built predictive models, and performed a fairness analysis. The most relevant columns in our analysis include:
-- **Calories**: Total calorie content of the recipe.  
-- **Average Rating**: Average user rating per recipe (1-5).  
-- **Low Calories**: A binary feature indicating if the recipe’s calorie count is below 500.  
+Given the datasets, we investigated whether calorie content influences how people rate recipes on food.com. To help make our analysis easier, we separated the values in the 'nutrition' column into individual columns such as 'calories', 'total fat', 'sugar', and 'protein'. This enabled us to perform more granular analyses of the nutritional factors that contribute to user ratings. Further, we created a binary feature, `low_calories`, to identify recipes with calorie counts below 500. This allowed us to compare the ratings of lower-calorie recipes to higher-calorie ones.
 
-By investigating the relationship between calorie content and ratings, this study sheds light on how nutritional factors affect user preferences.
+The most relevant columns in our study were `calories`, which represents the total calorie content. `average_rating` captures the average rating of a recipe and `low_calories` served as a categorical indicator. By exploring their relationships, we delved into how nutritional characteristics affect user choices. These findings can help recipe creators align their content with user interests and provide valuable guidance for future research into the impact of nutritional awareness on user behavior. This analysis contributes to understanding how people balance taste and health when rating recipes online.
+
 
 ---
 
