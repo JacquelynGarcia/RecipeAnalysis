@@ -182,7 +182,7 @@ The heatmap reveals that `calories` and `total_fat` have a moderate positive cor
 ## **Assessment of Missingness**  
 
 ### NMAR Analysis
-We believe that the missingness in the `average_rating` column is **NMAR** (Not Missing At Random). Users are more likely to leave ratings for recipes that they feel strongly about, whether positive or negative. Conversely, recipes that users feel indifferent about are less likely to receive a rating. To confirm this hypothesis, additional data could be collected, such as user engagement metrics (e.g., time spent on a recipe page or the number of reviews read) to establish if user interaction correlates with the likelihood of leaving a rating.
+We believe that the missingness in the `average_rating` column is **NMAR** (Not Missing At Random). Users are more likely to leave ratings for recipes that they feel strongly about, both positive and negative. On the other hand, recipes that users feel indifferent about are less likely to receive a rating. This could also be the underlying factor why most recipes have higher ratings overall. People are more likely to choose to make recipes that they would love and give them a great rating.
 
 ### Missingness Dependency
 
