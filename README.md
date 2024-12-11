@@ -144,13 +144,19 @@ Our cleaned DataFrame contains 234,429 rows and 24 columns. Below is a preview o
 ---
 
 ## Univariate Analysis
-We analyzed the distribution of key features to understand the dataset better:  
-1. **Calories**: The calorie distribution is highly skewed, with most recipes falling under 500 calories.  
-2. **Average Rating**: Ratings are concentrated around 4 and 5, with very few low ratings.  
+For this analysis, we examined the distribution of key features in our dataset to better understand their trends and patterns.
 
-![Calories Distribution Graph](images/average_uni.png)
+### **Calories**
+The distribution of calories in recipes is highly skewed to the right. Most recipes on the platform have fewer than 500 calories, while only a small proportion of recipes have extremely high calorie counts. This indicates that lower-calorie recipes dominate the dataset, but there are still a few outliers with significantly higher calorie values.
 
-![Ratings Distribution Graph](images/rating_uni.png)
+![Distribution of Calories](images/calories_uni.png)
+
+---
+
+### **Average Rating**
+The distribution of average ratings is heavily concentrated around the higher end of the scale, with most recipes having an average rating of 4 or 5. Very few recipes have ratings below 3, indicating a general bias towards positive feedback in the dataset. This trend suggests that users on the platform are more likely to rate recipes highly.
+
+![Distribution of Average Rating](images/rating_uni.png)
 
 
 ---
