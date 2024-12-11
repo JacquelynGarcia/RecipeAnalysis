@@ -171,12 +171,11 @@ We grouped recipes into `low-calorie` (≤ 500 calories) and `high-calorie` (> 5
 ---
 
 ## Correlation Analysis
-To better understand the relationships between the variables in our dataset, we generated a heatmap displaying the correlation coefficients. This analysis highlights which features have strong positive or negative relationships with the `average_rating` and other important variables, such as `calories` and `n_ingredients`. Identifying these correlations guided our feature selection for the predictive models.
+To better understand the relationships between the variables in our dataset, we generated a heatmap displaying the correlation coefficients. This heatmap allowed us to visualize features that had strong positive or negative relationships with the `average_rating` and other important variables, including `calories` and `n_ingredients`. Identifying these correlations helped guide our feature selection for the predictive models.
 
 ![Correlation Heatmap](images/heatmap.png)
 
-The heatmap reveals that `calories` and `total_fat` have a moderate positive correlation, while `average_rating` shows weak correlations with most features. This suggests that user ratings may not be strongly tied to individual nutritional attributes, requiring further exploration through predictive modeling.
-
+The heatmap reveals that `calories` and `total_fat` have a moderate positive correlation, while `average_rating` shows weak correlations with most features. This suggests that user ratings may not be strongly tied to individual nutritional attributes.
 
 ---
 
