@@ -236,12 +236,10 @@ I conducted a permutation test to evaluate the observed difference in average ra
 
 The observed mean difference in ratings between low-calorie and high-calorie recipes was **0.018**. The p-value obtained from the permutation test was **0.0**, which is less than the significance level of 0.05. This result shows that the observed difference in ratings is statistically significant.
 
-Permutation Test Distribution:  
 The histogram below shows the null distribution of mean differences, with the observed difference indicated by a red dashed line.  
 
 ![Permutation Test Distribution](images/meanratingdiff.png)
 
-Box Plot:  
 The box plot below illustrates the distribution of average ratings for low-calorie and high-calorie recipes. Both groups show similar box plots but the statistical tests highlight a significant difference in their means.  
 
 ![Box Plot of Average Rating by Calorie Category](images/boxplot.png)
@@ -337,14 +335,3 @@ The histogram below shows the distribution of the permuted differences in RMSE, 
 ![Permutation Test: Difference in RMSE Between Groups](images/RMSEdiffs.png)
 
 Since the p-value (0.947) is much greater than the significance level (0.05), we fail to reject the null hypothesis. This suggests that the observed difference in RMSE is not statistically significant and likely due to random chance. I can conclude that the model performs equally well for both low-calorie and high-calorie recipes, demonstrating fairness in this situation.
-
----
-
-## **Conclusion**  
-This project explored the relationship between recipe characteristics and user ratings on Food.com, aiming to develop a predictive model for average recipe ratings. Through rigorous data cleaning, feature engineering, and exploratory data analysis, we identified key factors such as calorie content, preparation time, and ingredient composition that influence ratings. Our analysis revealed significant patterns, such as a skew toward higher ratings (4 and 5) and the potential impact of nutritional content on user preferences.
-
-The baseline model provided a foundation for prediction but showed limited performance. By incorporating additional features and applying hyperparameter tuning, the final model demonstrated a substantial improvement in accuracy, achieving a lower RMSE and higher R² compared to the baseline. The inclusion of engineered features like ingredient presence and scaled nutritional content contributed significantly to the model's performance.
-
-Our fairness analysis confirmed that the final model performs equitably across low-calorie and high-calorie recipe groups, as evidenced by the permutation test showing no statistically significant difference in RMSE. This highlights the robustness of the model and its ability to provide unbiased predictions across diverse recipe types.
-
-Overall, this project underscores the potential of data science to provide actionable insights for users and platforms. Future directions could include incorporating user behavior data, like interactions or preferences, to refine predictions further. Additionally, expanding the analysis to assess cultural or regional influences on recipe ratings could provide a more comprehensive understanding of user preferences.
