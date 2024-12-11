@@ -1,4 +1,4 @@
-# **Cracking the Calorie Rating Code**
+# **The Hidden Link Between Calories and Ratings**
 **Author:** Jacquelyn Garcia  
 
 ---
