@@ -4,7 +4,7 @@
 ---
 
 ## **Overview**  
-This data science project investigates the relationship between the caloric content of recipes and their ratings on Food.com. Our analysis aims to understand whether recipes with higher calorie counts are rated differently than those with lower calorie counts. We also build and evaluate predictive models to forecast average ratings based on recipe attributes.
+This data science project, conducted at UCSD, is aimed at understanding the relationship between calories and ratings. My analysis aims to understand whether recipes with higher calorie counts are rated differently than those with lower calorie counts. I leveraged predictive models to forecast average ratings based on recipe attributes.
 
 ---
 
