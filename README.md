@@ -217,7 +217,7 @@ From our analyses, the missingness in `average_rating` is influenced by both the
 
 ### Hypothesis Testing
 
-As part of this analysis, we investigated whether the average rating of recipes differs between high-calorie and low-calorie recipes. Recipes were categorized as "low calorie" if they contained fewer than 500 calories and "high calorie" otherwise.
+For our analysis, we investigated whether the average rating of recipes differs between high-calorie and low-calorie recipes. Recipes were categorized as "low calorie" if they contained fewer than 500 calories and "high calorie" otherwise.
 
 #### Null and Alternative Hypotheses
 
@@ -231,11 +231,11 @@ As part of this analysis, we investigated whether the average rating of recipes 
 
 #### Permutation Test
 
-A permutation test was conducted to evaluate the observed difference in average ratings between the two groups. The test involved shuffling the calorie labels and recalculating the mean difference between the groups 1000 times to generate a null distribution.
+We conducted a permutation test to evaluate the observed difference in average ratings between the two groups. The calorie labels were shuffled and we recalculated the mean difference between the groups 1000 times to generate a null distribution.
 
 #### Results
 
-The observed mean difference in ratings between low-calorie and high-calorie recipes was **0.018**. The p-value obtained from the permutation test was **0.0**, which is less than the significance level of 0.05. This result indicates that the observed difference in ratings is statistically significant.
+The observed mean difference in ratings between low-calorie and high-calorie recipes was **0.018**. The p-value obtained from the permutation test was **0.0**, which is less than the significance level of 0.05. This result shows that the observed difference in ratings is statistically significant.
 
 #### Visualizations
 
@@ -245,13 +245,13 @@ The observed mean difference in ratings between low-calorie and high-calorie rec
    ![Permutation Test Distribution](images/meanratingdiff.png)
 
 2. Box Plot:  
-   The box plot below illustrates the distribution of average ratings for low-calorie and high-calorie recipes. Both groups show similar central tendencies, but the statistical tests highlight a significant difference in their means.  
+   The box plot below illustrates the distribution of average ratings for low-calorie and high-calorie recipes. Both groups show similar box plots but the statistical tests highlight a significant difference in their means.  
 
    ![Box Plot of Average Rating by Calorie Category](images/boxplot.png)
 
 #### Conclusion
 
-Since the p-value is less than the significance level, we reject the null hypothesis. This finding suggests that the average rating differs significantly between low-calorie and high-calorie recipes. One possible explanation could be that higher-calorie recipes, often perceived as richer and more indulgent, receive slightly higher ratings due to their appeal to taste preferences.
+Since the p-value is less than the significance level, we reject the null hypothesis. This suggests that the average rating differs significantly between low-calorie and high-calorie recipes. A possible explanation could be that higher-calorie recipes receive slightly higher ratings because of their appeal to a wider range of pallets.
 
 ---
 
