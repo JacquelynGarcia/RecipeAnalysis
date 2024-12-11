@@ -319,14 +319,14 @@ The final model demonstrates a generous improvement over the baseline model by i
 
 ## **Fairness Analysis**  
 
-To evaluate the fairness of our final model, we investigated whether the model performs differently for recipes categorized as "low-calorie" (≤500 calories) versus "high-calorie" (>500 calories). This analysis aimed to determine if the Root Mean Squared Error (RMSE) for predictions varied significantly between these two groups, which could indicate potential bias in the model.
+To evaluate the fairness of our final model, I investigated whether the model performs differently for recipes categorized as "low-calorie" (≤500 calories) versus "high-calorie" (>500 calories). This analysis aimed to determine if the Root Mean Squared Error (RMSE) for predictions varied significantly between these two groups.
 
 #### Null and Alternative Hypotheses:
 - Null Hypothesis (H₀): The model is fair, and any observed differences in RMSE between low-calorie and high-calorie recipes are due to random chance.
 - Alternative Hypothesis (H₁): The model is unfair, with a significant difference in RMSE between the two groups.
 
 #### Test Statistic:
-The difference in RMSE between high-calorie and low-calorie recipes was selected as the test statistic, as RMSE is an appropriate metric for evaluating regression models.
+The difference in RMSE between high-calorie and low-calorie recipes was selected as the test statistic.
 
 #### Observed Results:
 - RMSE for Low-Calorie Recipes: 0.344
@@ -334,7 +334,7 @@ The difference in RMSE between high-calorie and low-calorie recipes was selected
 - Observed Difference in RMSE: -0.0008
 
 #### Permutation Test:
-We conducted a permutation test with 1,000 iterations to determine if the observed difference in RMSE was statistically significant. In each iteration, the group labels ("low-calorie" or "high-calorie") were shuffled, and the difference in RMSE was recalculated. The p-value was computed as the proportion of permutations where the absolute difference exceeded the observed difference.
+I conducted a permutation test with 1,000 iterations to determine if the observed difference in RMSE was statistically significant. In each iteration, the group labels were shuffled, and the difference in RMSE was recalculated. The p-value was computed as the proportion of permutations where the absolute difference exceeded the observed difference.
 
 - P-value: 0.947
 
@@ -343,7 +343,7 @@ The histogram below shows the distribution of the permuted differences in RMSE, 
 ![Permutation Test: Difference in RMSE Between Groups](images/RMSEdiffs.png)
 
 #### Conclusion:
-Since the p-value (0.947) is much greater than the significance level (0.05), we fail to reject the null hypothesis. This suggests that the observed difference in RMSE is not statistically significant and likely due to random chance. Thus, we conclude that the model performs equally well for both low-calorie and high-calorie recipes, demonstrating fairness with respect to this criterion.
+Since the p-value (0.947) is much greater than the significance level (0.05), we fail to reject the null hypothesis. This suggests that the observed difference in RMSE is not statistically significant and likely due to random chance. I can conclude that the model performs equally well for both low-calorie and high-calorie recipes, demonstrating fairness in this situation.
 
 ---
 
