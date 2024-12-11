@@ -167,8 +167,6 @@ We analyzed the relationship between `calories` and `average_rating`. As shown i
 
 ![Calories vs. Average Rating](images/calvrating.png)
 
----
-
 ### Mean and Median Ratings by Low-Calorie and High-Calorie Recipes
 We grouped recipes into `low-calorie` (≤ 500 calories) and `high-calorie` (> 500 calories) categories to compare their mean and median ratings. The bar plot below demonstrates that both categories have similar mean and median ratings, suggesting that calorie content alone does not heavily influence overall ratings.
 
