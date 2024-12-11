@@ -12,7 +12,8 @@ This data science project, conducted at UCSD under the supervision of Professor 
 With the rise of food bloggers and self-proclaimed 'foodies', we have seen an uptick in widely available recipes online for everyone to try. Many of the most popularly shared recipes are decadent and rich foods, often associated with a high amount of calories. The United States is commonly ranked among the top countries with the highest obesity rate in the world ([World Population Review, 2023](https://worldpopulationreview.com/country-rankings/obesity-rates-by-country)). Obesity can commonly be linked to other health issues like cardiovascular diseases, diabetes, cancer, fatty liver disease, and mental health illnesses. Taking this into consideration, I will be investigating the relationship between rating and calories in a recipe. I hypothesize that people would be more willing to try and give a higher rating to a more calorically dense meal as opposed to a healthier option. In order to conduct this analysis, we will be using two datasets from [Food.com](https://www.food.com) which consist of recipes and ratings. 
 
 This project makes use of two datasets:  
-1. **Recipes Dataset**: Information about 83,782 unique recipes, including nutrition and preparation details. This dataset consists of the following columns:
+**Recipes Dataset**: Information about 83,782 unique recipes, including nutrition and preparation details. This dataset consists of the following columns:
+
 | Column           | Description                                                                                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`           | Recipe name                                                                                                                                 |
@@ -28,7 +29,8 @@ This project makes use of two datasets:
 | `ingredients`    | Text for recipe ingredients                                                                                                                 |
 | `n_ingredients`  | Number of ingredients in recipe                                                                                                             |
 
-2. **Interactions Dataset**: 731,927 user interactions, including ratings and reviews for the recipes. This dataset's column are as follows:
+**Interactions Dataset**: 731,927 user interactions, including ratings and reviews for the recipes. This dataset's column are as follows:
+
 | Column       | Description               |
 |--------------|---------------------------|
 | `user_id`    | User ID                   |
