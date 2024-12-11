@@ -53,28 +53,28 @@ The most relevant columns in our study were `calories`, which represents the tot
 ## **Data Cleaning and Exploratory Data Analysis**  
 ### Data Cleaning
 
-To prepare the data for analysis, we performed several data cleaning steps that ensured the dataset was structured appropriately and contained relevant features. These steps addressed missing values, derived meaningful features, and reduced dimensionality:
+To help prepare the data for our analysis, we performed several data cleaning steps to ensure that the dataset was structured appropriately and contained relevant features. These steps addressed missing values, derived meaningful features, and one-hot encoding:
 
 1. Handling Missing Values
-   - Replaced `0` values in the `rating` column with `NaN`. Ratings are typically on a scale of 1 to 5, so a `0` indicates missing data. This adjustment prevents bias in the ratings analysis and ensures calculations like averages to exclude these values from calculations.
+   - Replaced `0` values in the `rating` column with `NaN`. Ratings are typically on a scale of 1 to 5, so a `0` indicates missing data. This adjustment prevents bias in the ratings analysis and ensures calculations like averages exclude these values.
 
 2. Splitting Nutrition Information
-   - The `nutrition` column, initially constructed as a string resembling a list, was split into individual columns: `calories`, `total_fat`, `sugar`, `sodium`, `protein`, `saturated_fat`, and `carbohydrates`. Each column was converted to numeric types to make computations and aggregations possible.
+   - The `nutrition` column was initially constructed as a string resembling a list, which we then split into individual columns: `calories`, `total_fat`, `sugar`, `sodium`, `protein`, `saturated_fat`, and `carbohydrates`. Each column was converted to numeric types to make computations and aggregations possible.
 
 3. Creating a Boolean Feature for Low-Calorie Recipes
-   - Added a new column, `low_calories`, to classify recipes with `calories ≤ 500` as `True` and those with `calories > 500` as `False`. This feature simplifies the analysis of low-calorie recipes compared to others.
+   - Added a new column, `low_calories`, to classify recipes with `calories ≤ 500` as `True` and those with `calories > 500` as `False`. This feature simplifies the analysis of low-calorie recipes compared to others later on.
 
 4. One-Hot Encoding of Ingredients
    - Extracted key ingredients (`butter`, `eggs`, `garlic cloves`, `milk`, `olive oil`, `onion`, `pepper`, `salt`, `sugar`, `water`) from the `ingredients` list column and converted them into one-hot encoded binary features. These features indicate whether each ingredient is present (`1`) or absent (`0`) in a recipe, enabling us to analyze the relationship between specific ingredients and ratings. Further, we wanted to see if these ingredients would prove to be relevant features once we began using our models.
 
 5. Dropping Irrelevant or Redundant Columns
-   - Removed unnecessary columns such as `description`, `tags`, and `steps`, which were not relevant to our analysis. This step reduced the size of the dataset and focused on features directly related to our research question.
+   - Removed unnecessary columns such as `description`, `tags`, and `steps`, which were not relevant to our analysis. This step reduced the size of the dataset and focused on features directly related to our research question and would prove to be useful when predicting our label.
 
 6. Handling Outliers and Scaling
-   - Outliers in the `calories` and `sodium` columns were examined, but no transformations were applied in this stage. Numerical features will be scaled during the modeling phase if necessary.
+   - Outliers in the `calories` and `sodium` columns were examined, but no transformations were applied in this stage.
 
 ### Impact of Data Cleaning
-These cleaning steps made the dataset more manageable and allowed us to focus on key features, such as the relationship between `calories` and `average_rating`. By creating derived features like `low_calories` and encoding ingredients, we aligned the dataset with our analysis goals. The cleaned dataset consists of the following relevant columns:
+These cleaning steps made the dataset more manageable and allowed us to focus on key features, such as the relationship between `calories` and `average_rating`. By creating features like `low_calories` and encoding ingredients, we aligned the dataset with the goal of our specific project. The cleaned dataset consists of the following relevant columns:
 
 | Column              | Description                                                                 |
 |---------------------|-----------------------------------------------------------------------------|
@@ -124,8 +124,6 @@ Below are the data types of the columns in the cleaned dataset:
 | `salt`            | int64       |
 | `sugar`           | int64       |
 | `water`           | int64       |
-
-These data types ensure that the dataset is properly formatted for analysis and modeling.
 
 ### Results
 Our cleaned DataFrame contains 234,429 rows and 24 columns. Below is a preview of the first 5 rows of the cleaned DataFrame:
