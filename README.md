@@ -31,7 +31,8 @@ This dataset consists of the following columns:
 | `ingredients`    | Text for recipe ingredients                                                                                                                 |
 | `n_ingredients`  | Number of ingredients in recipe                                                                                                             |
 
-`Interactions`: 731,927 user interactions, including ratings and reviews for the recipes. This dataset's column are as follows:
+`Interactions`: 731,927 user interactions, including ratings and reviews for the recipes.
+This dataset's column are as follows:
 
 | Column       | Description               |
 |--------------|---------------------------|
