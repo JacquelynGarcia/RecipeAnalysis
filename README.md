@@ -287,22 +287,44 @@ A scatter plot of predicted vs. actual ratings further highlights the limitation
 
 In conclusion, while the baseline model provides a foundation for understanding the prediction problem, its poor performance indicates that it is not sufficient for accurately predicting recipe ratings. Future models will incorporate additional features, better transformations, and more advanced algorithms to enhance predictive accuracy.
 
-![Baseline Model: Predicted vs. Actual Ratings](baselinemodel.png)
+![Baseline Model: Predicted vs. Actual Ratings](images/baselinemodel.png)
 
 ---
 
 ## **Final Model**  
-- **Model**: Random Forest Regressor  
-- **Features**:  
-  - `calories`, `minutes`, `n_ingredients`  
-  - Nutritional attributes like `sugar` and `protein`  
-- **Performance**:  
-  - RMSE: 0.72  
-  - R²: 0.68  
+To improve upon the baseline model, we developed a final model using a Random Forest Regressor, which is well-suited for capturing complex relationships in the data. This model incorporated additional features and employed hyperparameter tuning to enhance predictive accuracy.
 
-Hyperparameter tuning with GridSearchCV improved the model’s performance by optimizing `max_depth` and `n_estimators`.  
+#### Features and Their Transformations:
+1. `calories`, `n_ingredients`, and `minutes`:
+   - These features were retained from the baseline model because they are directly related to user preferences and recipe characteristics.
+   - Standardized using `StandardScaler` to ensure uniformity across numerical scales.
 
-(Inserting Graph Here)
+2. `total_fat`, `sugar`, `sodium`, and `protein`:
+   - Added to capture nutritional information, which significantly impacts recipe ratings. For instance, recipes with balanced nutritional content might receive higher ratings.
+
+3. Presence of Key Ingredients (`butter`, `eggs`, `garlic cloves`):
+   - One-hot encoded binary variables representing the presence of these popular ingredients. These ingredients may influence user preferences and, consequently, ratings.
+
+#### Modeling Algorithm:
+We utilized a `RandomForestRegressor` due to its ability to handle complex interactions between features and robustness to overfitting when hyperparameters are properly tuned. Random forests also provide feature importance metrics, aiding in understanding the contributions of each feature.
+
+#### Hyperparameter Tuning:
+Using `GridSearchCV`, we fine-tuned the following hyperparameters:
+- `n_estimators`: Number of trees in the forest. Tested values: [100, 150, 200].
+- `max_depth`: Maximum depth of the trees. Tested values: [10, 20, 30].
+- The best combination was found to be `n_estimators=200` and `max_depth=30`.
+
+#### Model Evaluation:
+The final model achieved:
+- **Root Mean Squared Error (RMSE)**: **0.344**, indicating a significant improvement over the baseline RMSE of **0.491**.
+- **R² Score**: **0.509**, demonstrating that the model explains approximately 51% of the variance in recipe ratings, a substantial improvement over the baseline R² of **0.0002**.
+
+The scatter plot below compares the predicted vs. actual ratings for the test set. The points align more closely with the ideal prediction line (red dashed line), indicating improved performance compared to the baseline model.
+
+#### Conclusion:
+The final model demonstrates a marked improvement over the baseline model by incorporating additional features and leveraging the Random Forest algorithm. The inclusion of nutritional attributes and ingredient presence, combined with hyperparameter tuning, allowed the model to capture more nuanced relationships in the data, resulting in better predictive performance.
+
+![Final Model: Predicted vs. Actual Ratings](images/finalmodel.png)
 
 ---
 
