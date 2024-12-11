@@ -1,4 +1,4 @@
-# **Exploring the Relationship Between Calories and Ratings**
+# **Cracking the Calorie Rating Code**
 **Author:** Jacquelyn Garcia  
 
 ---
