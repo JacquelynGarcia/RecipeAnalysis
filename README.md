@@ -143,7 +143,7 @@ Our cleaned DataFrame contains 234,429 rows and 24 columns. Below is a preview o
 
 ---
 
-## **Univariate Analysis**  
+## Univariate Analysis
 We analyzed the distribution of key features to understand the dataset better:  
 1. **Calories**: The calorie distribution is highly skewed, with most recipes falling under 500 calories.  
 2. **Average Rating**: Ratings are concentrated around 4 and 5, with very few low ratings.  
