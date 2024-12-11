@@ -194,7 +194,7 @@ We investigated whether the missingness in `average_rating` depends on the `calo
 - Test Statistic: The absolute difference in mean `calories` between recipes with missing and non-missing `average_rating`.  
 - Significance Level: 0.05.  
 
-After conducting a permutation test with 1,000 permutations, we found an observed test statistic of **102.61**, with a **p-value of 0.0**. The histogram of the permutation test statistics is shown below, with the observed statistic marked by a red dashed line.
+After comleting a permutation test with 1,000 permutations, we observed a test statistic of **102.61**, with a **p-value of 0.0**. The histogram of the permutation test statistics is shown below, with the observed statistic marked by a red dashed line.
 
 ![Permutation Test: Calories vs. Missingness in Average Rating](images/nmar.png)
 
@@ -211,7 +211,7 @@ Next, we tested whether the missingness in `average_rating` depends on the `n_in
 We ran another permutation test and found an observed test statistic of **0.41**, with a **p-value of 0.0**. This result suggests that the missingness in `average_rating` is also dependent on the number of ingredients.
 
 ### Conclusion
-From our analyses, the missingness in `average_rating` is influenced by both the `calories` and `n_ingredients` of a recipe. This dependency suggests that there are underlying patterns in user behavior that drive the likelihood of submitting a rating for specific types of recipes.
+From our analyses, the missingness in `average_rating` is influenced by both the `calories` and `n_ingredients` of a recipe. This suggests that there are underlying patterns in user behavior that drive the likelihood of submitting a rating for specific types of recipes.
 
 ---
 
