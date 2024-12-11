@@ -171,15 +171,6 @@ We grouped recipes into `low-calorie` (≤ 500 calories) and `high-calorie` (> 5
 
 ---
 
-## **Interesting Aggregates**  
-We analyzed the relationship between cooking time (`minutes`) and calories:  
-- Shorter cooking times are generally associated with lower calorie recipes.  
-- Longer cooking times show greater variability in calorie content.  
-
-(Inserting Graph Here)
-
----
-
 ## **Assessment of Missingness**  
 
 ### NMAR Analysis
