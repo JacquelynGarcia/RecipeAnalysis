@@ -53,7 +53,7 @@ By investigating the relationship between calorie content and ratings, this stud
 ---
 
 ## **Data Cleaning and Exploratory Data Analysis**  
-### **Data Cleaning**
+### Data Cleaning
 
 To prepare the data for analysis, we performed several data cleaning steps that ensured the dataset was structured appropriately and contained relevant features. These steps addressed missing values, derived meaningful features, and reduced dimensionality:
 
@@ -75,7 +75,7 @@ To prepare the data for analysis, we performed several data cleaning steps that 
 6. Handling Outliers and Scaling
    - Outliers in the `calories` and `sodium` columns were examined, but no transformations were applied in this stage. Numerical features will be scaled during the modeling phase if necessary.
 
-#### Impact of Data Cleaning
+### Impact of Data Cleaning
 These cleaning steps made the dataset more manageable and allowed us to focus on key features, such as the relationship between `calories` and `average_rating`. By creating derived features like `low_calories` and encoding ingredients, we aligned the dataset with our analysis goals. The cleaned dataset consists of the following relevant columns:
 
 | Column              | Description                                                                 |
@@ -129,7 +129,7 @@ Below are the data types of the columns in the cleaned dataset:
 
 These data types ensure that the dataset is properly formatted for analysis and modeling.
 
-#### Result
+### Results
 Our cleaned DataFrame contains 234,429 rows and 24 columns. Below is a preview of the first 5 rows of the cleaned DataFrame:
 
 | name                             | id      | minutes | n_ingredients | rating | average_rating | calories | total_fat | sugar | sodium | ... | butter | eggs | garlic_cloves | milk | olive_oil | onion | pepper | salt | sugar | water |
