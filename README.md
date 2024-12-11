@@ -210,7 +210,6 @@ Next, I tested whether the missingness in `average_rating` depends on the `n_ing
 
 I ran another permutation test and found an observed test statistic of **0.41**, with a **p-value of 0.0**. This result suggests that the missingness in `average_rating` is also dependent on the number of ingredients.
 
-### Conclusion
 From my analyses, the missingness in `average_rating` is influenced by both the `calories` and `n_ingredients` of a recipe. This indicates that there are underlying patterns in user behavior that drive the likelihood of submitting a rating for specific types of recipes.
 
 ---
@@ -237,19 +236,15 @@ I conducted a permutation test to evaluate the observed difference in average ra
 
 The observed mean difference in ratings between low-calorie and high-calorie recipes was **0.018**. The p-value obtained from the permutation test was **0.0**, which is less than the significance level of 0.05. This result shows that the observed difference in ratings is statistically significant.
 
-#### Visualizations
+Permutation Test Distribution:  
+The histogram below shows the null distribution of mean differences, with the observed difference indicated by a red dashed line.  
 
-1. Permutation Test Distribution:  
-   The histogram below shows the null distribution of mean differences, with the observed difference indicated by a red dashed line.  
+![Permutation Test Distribution](images/meanratingdiff.png)
 
-   ![Permutation Test Distribution](images/meanratingdiff.png)
+Box Plot:  
+The box plot below illustrates the distribution of average ratings for low-calorie and high-calorie recipes. Both groups show similar box plots but the statistical tests highlight a significant difference in their means.  
 
-2. Box Plot:  
-   The box plot below illustrates the distribution of average ratings for low-calorie and high-calorie recipes. Both groups show similar box plots but the statistical tests highlight a significant difference in their means.  
-
-   ![Box Plot of Average Rating by Calorie Category](images/boxplot.png)
-
-#### Conclusion
+![Box Plot of Average Rating by Calorie Category](images/boxplot.png)
 
 Since the p-value is less than the significance level, we reject the null hypothesis. The average rating differs significantly between low-calorie and high-calorie recipes. A possible explanation could be that higher-calorie recipes receive slightly higher ratings because of their appeal to a wider range of pallets.
 
@@ -283,7 +278,7 @@ I generated a scatter plot of predicted vs. actual ratings to highlight the limi
 ## **Final Model**  
 To improve upon the baseline model, I developed a final model using a Random Forest Regressor, which is well-suited for capturing complex relationships in the data. This model incorporated additional features and employed hyperparameter tuning to enhance predictive accuracy.
 
-#### Features and Their Transformations:
+#### Features and Their Transformations
 1. `calories`, `n_ingredients`, and `minutes`:
    - These features were retained from the baseline model because they are directly related to user preferences and recipe characteristics.
    - Standardized using `StandardScaler` to ensure uniformity across numerical scales.
@@ -294,23 +289,22 @@ To improve upon the baseline model, I developed a final model using a Random For
 3. Presence of Key Ingredients (`butter`, `eggs`, `garlic cloves`):
    - One-hot encoded binary variables representing the presence of these popular ingredients.
 
-#### Modeling Algorithm:
+#### Modeling Algorithm
 I utilized a `RandomForestRegressor` due to its ability to handle complex interactions between features and robustness to overfitting when hyperparameters are tuned. Random forests also provide feature importance metrics, which help in understanding the importance of the features.
 
-#### Hyperparameter Tuning:
+#### Hyperparameter Tuning
 Using `GridSearchCV`, I fine-tuned the following hyperparameters:
 - `n_estimators`: Number of trees in the forest. Tested values: [100, 150, 200].
 - `max_depth`: Maximum depth of the trees. Tested values: [10, 20, 30].
 - The best combination was found to be `n_estimators=200` and `max_depth=30`.
 
-#### Model Evaluation:
+#### Model Evaluation
 The final model achieved:
 - Root Mean Squared Error (RMSE): **0.344**, which was a significant improvement over the baseline RMSE of **0.491**.
 - R² Score: **0.509**, showing that the model explains approximately 51% of the variance in recipe ratings in comparison of the baseline model's R² of **0.0002**.
 
 The scatter plot below compares the predicted vs. actual ratings for the test set. The points align more closely with the ideal prediction line, easily visually capturing the improved performance compared to the baseline model.
 
-#### Conclusion:
 The final model demonstrates a generous improvement over the baseline model by incorporating additional features and leveraging the Random Forest algorithm. The inclusion of nutritional attributes and ingredient presence, combined with hyperparameter tuning, allowed the model to capture more nuanced relationships in the data and resulted in better predictive performance.
 
 ![Final Model: Predicted vs. Actual Ratings](images/finalmodel.png)
@@ -321,19 +315,19 @@ The final model demonstrates a generous improvement over the baseline model by i
 
 To evaluate the fairness of our final model, I investigated whether the model performs differently for recipes categorized as "low-calorie" (≤500 calories) versus "high-calorie" (>500 calories). This analysis aimed to determine if the Root Mean Squared Error (RMSE) for predictions varied significantly between these two groups.
 
-#### Null and Alternative Hypotheses:
+#### Null and Alternative Hypotheses
 - Null Hypothesis (H₀): The model is fair, and any observed differences in RMSE between low-calorie and high-calorie recipes are due to random chance.
 - Alternative Hypothesis (H₁): The model is unfair, with a significant difference in RMSE between the two groups.
 
-#### Test Statistic:
+#### Test Statistic
 The difference in RMSE between high-calorie and low-calorie recipes was selected as the test statistic.
 
-#### Observed Results:
+#### Observed Results
 - RMSE for Low-Calorie Recipes: 0.344
 - RMSE for High-Calorie Recipes: 0.343
 - Observed Difference in RMSE: -0.0008
 
-#### Permutation Test:
+#### Permutation Test
 I conducted a permutation test with 1,000 iterations to determine if the observed difference in RMSE was statistically significant. In each iteration, the group labels were shuffled, and the difference in RMSE was recalculated. The p-value was computed as the proportion of permutations where the absolute difference exceeded the observed difference.
 
 - P-value: 0.947
@@ -342,7 +336,6 @@ The histogram below shows the distribution of the permuted differences in RMSE, 
 
 ![Permutation Test: Difference in RMSE Between Groups](images/RMSEdiffs.png)
 
-#### Conclusion:
 Since the p-value (0.947) is much greater than the significance level (0.05), we fail to reject the null hypothesis. This suggests that the observed difference in RMSE is not statistically significant and likely due to random chance. I can conclude that the model performs equally well for both low-calorie and high-calorie recipes, demonstrating fairness in this situation.
 
 ---
