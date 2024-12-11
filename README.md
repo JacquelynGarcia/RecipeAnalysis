@@ -129,7 +129,7 @@ Below are the data types of the columns in the cleaned dataset:
 
 These data types ensure that the dataset is properly formatted for analysis and modeling.
 
-### **Result**
+### Result
 Our cleaned DataFrame contains 234,429 rows and 24 columns. Below is a preview of the first 5 rows of the cleaned DataFrame:
 
 | name                             | id      | minutes | n_ingredients | rating | average_rating | calories | total_fat | sugar | sodium | ... | butter | eggs | garlic_cloves | milk | olive_oil | onion | pepper | salt | sugar | water |
