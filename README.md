@@ -1,4 +1,4 @@
-# **Calorie Count and Culinary Success: Analyzing the Relationship Between Calories and Ratings**
+# **Exploring the Relationship Between Calories and Ratings**
 **Author:** Jacquelyn Garcia  
 
 ---
