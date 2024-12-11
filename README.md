@@ -159,7 +159,7 @@ The distribution of average ratings is heavily concentrated around the higher en
 
 ---
 
-## **Bivariate Analysis**  
+## Bivariate Analysis
 For this analysis, we examined relationships between key features in the dataset to uncover potential correlations and trends.
 
 ### Calories vs. Average Rating
