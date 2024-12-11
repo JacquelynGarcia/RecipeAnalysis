@@ -189,8 +189,8 @@ We believe that the missingness in the `average_rating` column is **NMAR** (Not 
 #### Calories and Missingness in `average_rating`
 We investigated whether the missingness in `average_rating` depends on the `calories` column.
 
-- Null Hypothesis: The missingness of `average_rating` does not depend on the `calories` of a recipe.  
-- Alternative Hypothesis: The missingness of `average_rating` depends on the `calories` of a recipe.  
+- Null Hypothesis (H₀): The missingness of `average_rating` does not depend on the `calories` of a recipe.  
+- Alternative Hypothesis (H₁): The missingness of `average_rating` depends on the `calories` of a recipe.  
 - Test Statistic: The absolute difference in mean `calories` between recipes with missing and non-missing `average_rating`.  
 - Significance Level: 0.05.  
 
@@ -203,8 +203,8 @@ Since the p-value is less than 0.05, we reject the null hypothesis and conclude 
 #### Number of Ingredients and Missingness in `average_rating`
 Next, we tested whether the missingness in `average_rating` depends on the `n_ingredients` column.
 
-- Null Hypothesis: The missingness of `average_rating` does not depend on the number of ingredients (`n_ingredients`).  
-- Alternative Hypothesis: The missingness of `average_rating` depends on the number of ingredients (`n_ingredients`).  
+- Null Hypothesis (H₀): The missingness of `average_rating` does not depend on the number of ingredients (`n_ingredients`).  
+- Alternative Hypothesis (H₁): The missingness of `average_rating` depends on the number of ingredients (`n_ingredients`).  
 - Test Statistic: The absolute difference in mean `n_ingredients` between recipes with missing and non-missing `average_rating`.  
 - Significance Level: 0.05.  
 
@@ -328,8 +328,8 @@ The final model demonstrates a marked improvement over the baseline model by inc
 To evaluate the fairness of our final model, we investigated whether the model performs differently for recipes categorized as "low-calorie" (≤500 calories) versus "high-calorie" (>500 calories). This analysis aimed to determine if the Root Mean Squared Error (RMSE) for predictions varied significantly between these two groups, which could indicate potential bias in the model.
 
 #### Null and Alternative Hypotheses:
-- Null Hypothesis: The model is fair, and any observed differences in RMSE between low-calorie and high-calorie recipes are due to random chance.
-- Alternative Hypothesis: The model is unfair, with a significant difference in RMSE between the two groups.
+- Null Hypothesis (H₀): The model is fair, and any observed differences in RMSE between low-calorie and high-calorie recipes are due to random chance.
+- Alternative Hypothesis (H₁): The model is unfair, with a significant difference in RMSE between the two groups.
 
 #### Test Statistic:
 The difference in RMSE between high-calorie and low-calorie recipes was selected as the test statistic, as RMSE is an appropriate metric for evaluating regression models.
