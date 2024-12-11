@@ -256,15 +256,11 @@ Since the p-value is less than the significance level, we reject the null hypoth
 ---
 
 ## **Framing a Prediction Problem**  
-The prediction problem identified for this project is to predict the average rating (`average_rating`) of a recipe based on its characteristics, such as nutritional content, recipe attributes, and the presence of specific ingredients. This prediction problem aligns with the overall theme of understanding the relationship between recipe features and user preferences, providing actionable insights for recipe developers and users.
+The prediction problem we identified for this project was to predict the `average_rating` of a recipe based on some of its characteristics, including nutritional content, recipe attributes, and the presence of specific ingredients. This type of problem would be categorized as a regression problem because as the label, `average_rating`, is continuous. `average_rating` represents the aggregated opinions of users about a recipe which is an ideal measure for prediction.
 
-This is a regression problem, as the target variable, `average_rating`, is continuous. The response variable chosen, `average_rating`, represents the aggregated opinions of users about a recipe, making it an ideal measure for prediction. By predicting ratings, we can help users identify highly-rated recipes without relying solely on subjective reviews.
+The evaluation metric we selected is Root Mean Squared Error (RMSE). RMSE is an appropriate metric for this regression problem because it penalizes larger prediction errors more heavily which is important when predicting ratings. A large error in rating prediction could significantly mislead recipe testers.
 
-The evaluation metric selected is Root Mean Squared Error (RMSE). RMSE is an appropriate metric for this regression problem because it penalizes larger prediction errors more heavily, which is crucial when predicting ratings. A large error in rating prediction could significantly mislead users, so minimizing such errors is essential.
-
-The features used for the prediction include `calories`, `total_fat`, `sugar` (nutritional content), `n_ingredients`, `minutes` (recipe attributes), and the presence of key ingredients such as `butter`, `eggs`, and `garlic_cloves`. These features were chosen because they are directly available before prediction and are likely to influence the average rating. For example, recipes with balanced nutritional profiles might appeal to health-conscious users and receive higher ratings. Similarly, shorter preparation times might correlate with convenience and better user experiences, leading to higher ratings. Lastly, popular ingredients such as butter and eggs might be associated with better flavor profiles, influencing user preferences.
-
-This framing ensures that only relevant features available at the time of prediction are used, adhering to the principle of fairness and practicality in building predictive models.
+The features used for the prediction include `calories`, `total_fat`, `sugar`, `n_ingredients`, `minutes`, and key ingredients such as `butter`, `eggs`, and `garlic_cloves`. We chose these features because they are directly available before prediction and are likely to influence the average rating, as indicated by our heatmap. For example, recipes with balanced nutritional profiles might appeal to health-conscious users and receive higher ratings. Similarly, shorter preparation times might correlate with convenience and better user experiences, leading to higher ratings. Lastly, popular ingredients such as butter and eggs might be associated with better flavor profiles.
 
 ---
 
