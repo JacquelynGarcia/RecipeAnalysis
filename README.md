@@ -150,6 +150,9 @@ We analyzed the distribution of key features to understand the dataset better:
 
 ![Calories Distribution Graph](images/average_uni.png)
 
+![Ratings Distribution Graph](images/rating_uni.png)
+
+
 ---
 
 ## **Bivariate Analysis**  
