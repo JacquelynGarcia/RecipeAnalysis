@@ -98,6 +98,37 @@ These cleaning steps made the dataset more manageable and allowed us to focus on
 | `sugar`             | Indicates presence of sugar in the recipe (1 or 0)                        |
 | `water`             | Indicates presence of water in the recipe (1 or 0)                        |
 
+Below are the data types of the columns in the cleaned dataset:
+
+| Column            | Data Type   |
+|--------------------|-------------|
+| `name`            | object      |
+| `id`              | int64       |
+| `minutes`         | int64       |
+| `n_ingredients`   | int64       |
+| `rating`          | float64     |
+| `average_rating`  | float64     |
+| `calories`        | float64     |
+| `total_fat`       | float64     |
+| `sugar`           | float64     |
+| `sodium`          | float64     |
+| `protein`         | float64     |
+| `saturated_fat`   | float64     |
+| `carbohydrates`   | float64     |
+| `low_calories`    | bool        |
+| `butter`          | int64       |
+| `eggs`            | int64       |
+| `garlic cloves`   | int64       |
+| `milk`            | int64       |
+| `olive oil`       | int64       |
+| `onion`           | int64       |
+| `pepper`          | int64       |
+| `salt`            | int64       |
+| `sugar`           | int64       |
+| `water`           | int64       |
+
+These data types ensure that the dataset is properly formatted for analysis and modeling.
+
 ---
 
 ## **Univariate Analysis**  
