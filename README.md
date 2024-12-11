@@ -186,25 +186,37 @@ We analyzed the relationship between cooking time (`minutes`) and calories:
 
 ## **Assessment of Missingness**  
 
-### **NMAR Analysis**  
-The missingness in the `review` column is likely **NMAR (Not Missing At Random)**. Users may be less motivated to leave a review if they feel indifferent about a recipe, leading to missing data.
+### NMAR Analysis
+We believe that the missingness in the `average_rating` column is **NMAR** (Not Missing At Random). Users are more likely to leave ratings for recipes that they feel strongly about, whether positive or negative. Conversely, recipes that users feel indifferent about are less likely to receive a rating. To confirm this hypothesis, additional data could be collected, such as user engagement metrics (e.g., time spent on a recipe page or the number of reviews read) to establish if user interaction correlates with the likelihood of leaving a rating.
 
-### **Missingness Dependency**  
-We tested whether the missingness of `average_rating` depends on:  
-1. **Calories**: A permutation test (p-value = 0.02) showed significant dependence.  
-2. **Cooking Time**: A permutation test (p-value = 0.12) showed no significant dependence.
+### Missingness Dependency
 
----
+#### Calories and Missingness in `average_rating`
+We investigated whether the missingness in `average_rating` depends on the `calories` column.
 
-## **Hypothesis Testing**  
-**Research Question**: Are higher-calorie recipes rated differently than lower-calorie ones?  
+- Null Hypothesis: The missingness of `average_rating` does not depend on the `calories` of a recipe.  
+- Alternative Hypothesis: The missingness of `average_rating` depends on the `calories` of a recipe.  
+- Test Statistic: The absolute difference in mean `calories` between recipes with missing and non-missing `average_rating`.  
+- Significance Level: 0.05.  
 
-- **Null Hypothesis (H₀)**: The average ratings for high-calorie and low-calorie recipes are the same.  
-- **Alternative Hypothesis (H₁)**: The average ratings for high-calorie and low-calorie recipes differ.  
+After conducting a permutation test with 1,000 permutations, we found an observed test statistic of **102.61**, with a **p-value of 0.0**. The histogram of the permutation test statistics is shown below, with the observed statistic marked by a red dashed line.
 
-Using a two-sample t-test, we found a significant difference (p-value = 0.03). High-calorie recipes tend to have higher ratings.  
+![Permutation Test: Calories vs. Missingness in Average Rating](images/nmar.png)
 
-(Inserting Graph Here)
+Since the p-value is less than 0.05, we reject the null hypothesis and conclude that the missingness in `average_rating` is dependent on the `calories` of a recipe.
+
+#### Number of Ingredients and Missingness in `average_rating`
+Next, we tested whether the missingness in `average_rating` depends on the `n_ingredients` column.
+
+- Null Hypothesis: The missingness of `average_rating` does not depend on the number of ingredients (`n_ingredients`).  
+- Alternative Hypothesis: The missingness of `average_rating` depends on the number of ingredients (`n_ingredients`).  
+- Test Statistic: The absolute difference in mean `n_ingredients` between recipes with missing and non-missing `average_rating`.  
+- Significance Level: 0.05.  
+
+We ran another permutation test and found an observed test statistic of **0.41**, with a **p-value of 0.0**. This result suggests that the missingness in `average_rating` is also dependent on the number of ingredients.
+
+### Conclusion
+From our analyses, the missingness in `average_rating` is influenced by both the `calories` and `n_ingredients` of a recipe. This dependency suggests that there are underlying patterns in user behavior that drive the likelihood of submitting a rating for specific types of recipes.
 
 ---
 
