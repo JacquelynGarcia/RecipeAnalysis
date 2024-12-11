@@ -281,7 +281,7 @@ I generated a scatter plot of predicted vs. actual ratings to highlight the limi
 ---
 
 ## **Final Model**  
-To improve upon the baseline model, we developed a final model using a Random Forest Regressor, which is well-suited for capturing complex relationships in the data. This model incorporated additional features and employed hyperparameter tuning to enhance predictive accuracy.
+To improve upon the baseline model, I developed a final model using a Random Forest Regressor, which is well-suited for capturing complex relationships in the data. This model incorporated additional features and employed hyperparameter tuning to enhance predictive accuracy.
 
 #### Features and Their Transformations:
 1. `calories`, `n_ingredients`, and `minutes`:
@@ -289,29 +289,29 @@ To improve upon the baseline model, we developed a final model using a Random Fo
    - Standardized using `StandardScaler` to ensure uniformity across numerical scales.
 
 2. `total_fat`, `sugar`, `sodium`, and `protein`:
-   - Added to capture nutritional information, which significantly impacts recipe ratings. For instance, recipes with balanced nutritional content might receive higher ratings.
+   - Added to capture nutritional information, which significantly impacts recipe ratings.
 
 3. Presence of Key Ingredients (`butter`, `eggs`, `garlic cloves`):
-   - One-hot encoded binary variables representing the presence of these popular ingredients. These ingredients may influence user preferences and, consequently, ratings.
+   - One-hot encoded binary variables representing the presence of these popular ingredients.
 
 #### Modeling Algorithm:
-We utilized a `RandomForestRegressor` due to its ability to handle complex interactions between features and robustness to overfitting when hyperparameters are properly tuned. Random forests also provide feature importance metrics, aiding in understanding the contributions of each feature.
+I utilized a `RandomForestRegressor` due to its ability to handle complex interactions between features and robustness to overfitting when hyperparameters are tuned. Random forests also provide feature importance metrics, which help in understanding the importance of the features.
 
 #### Hyperparameter Tuning:
-Using `GridSearchCV`, we fine-tuned the following hyperparameters:
+Using `GridSearchCV`, I fine-tuned the following hyperparameters:
 - `n_estimators`: Number of trees in the forest. Tested values: [100, 150, 200].
 - `max_depth`: Maximum depth of the trees. Tested values: [10, 20, 30].
 - The best combination was found to be `n_estimators=200` and `max_depth=30`.
 
 #### Model Evaluation:
 The final model achieved:
-- Root Mean Squared Error (RMSE): **0.344**, indicating a significant improvement over the baseline RMSE of **0.491**.
-- R² Score: **0.509**, demonstrating that the model explains approximately 51% of the variance in recipe ratings, a substantial improvement over the baseline R² of **0.0002**.
+- Root Mean Squared Error (RMSE): **0.344**, which was a significant improvement over the baseline RMSE of **0.491**.
+- R² Score: **0.509**, showing that the model explains approximately 51% of the variance in recipe ratings in comparison of the baseline model's R² of **0.0002**.
 
-The scatter plot below compares the predicted vs. actual ratings for the test set. The points align more closely with the ideal prediction line (red dashed line), indicating improved performance compared to the baseline model.
+The scatter plot below compares the predicted vs. actual ratings for the test set. The points align more closely with the ideal prediction line, easily visually capturing the improved performance compared to the baseline model.
 
 #### Conclusion:
-The final model demonstrates a marked improvement over the baseline model by incorporating additional features and leveraging the Random Forest algorithm. The inclusion of nutritional attributes and ingredient presence, combined with hyperparameter tuning, allowed the model to capture more nuanced relationships in the data, resulting in better predictive performance.
+The final model demonstrates a generous improvement over the baseline model by incorporating additional features and leveraging the Random Forest algorithm. The inclusion of nutritional attributes and ingredient presence, combined with hyperparameter tuning, allowed the model to capture more nuanced relationships in the data and resulted in better predictive performance.
 
 ![Final Model: Predicted vs. Actual Ratings](images/finalmodel.png)
 
