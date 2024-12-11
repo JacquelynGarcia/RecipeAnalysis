@@ -203,8 +203,8 @@ Since the p-value is less than 0.05, we reject the null hypothesis and conclude 
 #### Number of Ingredients and Missingness in `average_rating`
 Next, we tested whether the missingness in `average_rating` depends on the `n_ingredients` column.
 
-- Null Hypothesis (H₀): The missingness of `average_rating` does not depend on the number of ingredients (`n_ingredients`).  
-- Alternative Hypothesis (H₁): The missingness of `average_rating` depends on the number of ingredients (`n_ingredients`).  
+- Null Hypothesis (H₀): The missingness of `average_rating` does not depend on `n_ingredients`.  
+- Alternative Hypothesis (H₁): The missingness of `average_rating` depends on `n_ingredients`.  
 - Test Statistic: The absolute difference in mean `n_ingredients` between recipes with missing and non-missing `average_rating`.  
 - Significance Level: 0.05.  
 
