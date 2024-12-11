@@ -316,8 +316,8 @@ Using `GridSearchCV`, we fine-tuned the following hyperparameters:
 
 #### Model Evaluation:
 The final model achieved:
-- **Root Mean Squared Error (RMSE)**: **0.344**, indicating a significant improvement over the baseline RMSE of **0.491**.
-- **R² Score**: **0.509**, demonstrating that the model explains approximately 51% of the variance in recipe ratings, a substantial improvement over the baseline R² of **0.0002**.
+- Root Mean Squared Error (RMSE): **0.344**, indicating a significant improvement over the baseline RMSE of **0.491**.
+- R² Score: **0.509**, demonstrating that the model explains approximately 51% of the variance in recipe ratings, a substantial improvement over the baseline R² of **0.0002**.
 
 The scatter plot below compares the predicted vs. actual ratings for the test set. The points align more closely with the ideal prediction line (red dashed line), indicating improved performance compared to the baseline model.
 
@@ -330,26 +330,39 @@ The final model demonstrates a marked improvement over the baseline model by inc
 
 ## **Fairness Analysis**  
 
-### **Question**  
-Does the model perform equally well for low-calorie and high-calorie recipes?
+To evaluate the fairness of our final model, we investigated whether the model performs differently for recipes categorized as "low-calorie" (≤500 calories) versus "high-calorie" (>500 calories). This analysis aimed to determine if the Root Mean Squared Error (RMSE) for predictions varied significantly between these two groups, which could indicate potential bias in the model.
 
-- **Null Hypothesis (H₀)**: The RMSE for low-calorie and high-calorie recipes is the same.  
-- **Alternative Hypothesis (H₁)**: The RMSE for low-calorie and high-calorie recipes is different.  
+#### Null and Alternative Hypotheses:
+- Null Hypothesis: The model is fair, and any observed differences in RMSE between low-calorie and high-calorie recipes are due to random chance.
+- Alternative Hypothesis: The model is unfair, with a significant difference in RMSE between the two groups.
 
-### **Results**  
-- **Observed RMSE Difference**: 0.12  
-- **P-value**: 0.001  
+#### Test Statistic:
+The difference in RMSE between high-calorie and low-calorie recipes was selected as the test statistic, as RMSE is an appropriate metric for evaluating regression models.
 
-Since the p-value is less than 0.05, we reject the null hypothesis. The model performs better for high-calorie recipes, indicating potential bias.  
+#### Observed Results:
+- RMSE for Low-Calorie Recipes: 0.344
+- RMSE for High-Calorie Recipes: 0.343
+- Observed Difference in RMSE: -0.0008
 
-(Inserting Graph Here)
+#### Permutation Test:
+We conducted a permutation test with 1,000 iterations to determine if the observed difference in RMSE was statistically significant. In each iteration, the group labels ("low-calorie" or "high-calorie") were shuffled, and the difference in RMSE was recalculated. The p-value was computed as the proportion of permutations where the absolute difference exceeded the observed difference.
+
+- P-value: 0.947
+
+The histogram below shows the distribution of the permuted differences in RMSE, with the observed difference indicated by the red dashed line.
+
+![Permutation Test: Difference in RMSE Between Groups](images/RMSEdiffs.png)
+
+#### Conclusion:
+Since the p-value (0.947) is much greater than the significance level (0.05), we fail to reject the null hypothesis. This suggests that the observed difference in RMSE is not statistically significant and likely due to random chance. Thus, we conclude that the model performs equally well for both low-calorie and high-calorie recipes, demonstrating fairness with respect to this criterion.
 
 ---
 
 ## **Conclusion**  
-Our analysis found that:  
-1. High-calorie recipes tend to receive slightly higher ratings.  
-2. Our final model predicts average ratings more effectively than the baseline.  
-3. The model is biased, performing better for high-calorie recipes than low-calorie ones.
+This project explored the relationship between recipe characteristics and user ratings on Food.com, aiming to develop a predictive model for average recipe ratings. Through rigorous data cleaning, feature engineering, and exploratory data analysis, we identified key factors such as calorie content, preparation time, and ingredient composition that influence ratings. Our analysis revealed significant patterns, such as a skew toward higher ratings (4 and 5) and the potential impact of nutritional content on user preferences.
 
-Future work could focus on reducing this bias and exploring additional features to improve model performance.
+The baseline model provided a foundation for prediction but showed limited performance. By incorporating additional features and applying hyperparameter tuning, the final model demonstrated a substantial improvement in accuracy, achieving a lower RMSE and higher R² compared to the baseline. The inclusion of engineered features like ingredient presence and scaled nutritional content contributed significantly to the model's performance.
+
+Our fairness analysis confirmed that the final model performs equitably across low-calorie and high-calorie recipe groups, as evidenced by the permutation test showing no statistically significant difference in RMSE. This highlights the robustness of the model and its ability to provide unbiased predictions across diverse recipe types.
+
+Overall, this project underscores the potential of data science to provide actionable insights for users and platforms. Future directions could include incorporating user behavior data, like interactions or preferences, to refine predictions further. Additionally, expanding the analysis to assess cultural or regional influences on recipe ratings could provide a more comprehensive understanding of user preferences.
