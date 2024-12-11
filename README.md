@@ -156,15 +156,15 @@ The distribution of average ratings is heavily concentrated around recipes havin
 ---
 
 ## Bivariate Analysis
-For this analysis, we examined relationships between key features in the dataset to uncover potential correlations and trends.
+For this analysis, we examined relationships between key features in the dataset to uncover potential correlations.
 
 ### Calories vs. Average Rating
-We analyzed the relationship between `calories` and `average_rating`. As shown in the scatter plot below, recipes with higher ratings tend to have a wide range of calorie counts, but there are clusters of low-calorie recipes with high ratings. This indicates that high-rated recipes are not solely calorie-dependent, and other factors may contribute to user preferences.
+We analyzed the relationship between `calories` and `average_rating`. As indicated by our scatter plot, recipes with higher ratings often have a wide range of calorie counts, but there is a clear indication of clusters of low-calorie recipes with high ratings. This shows that high-rated recipes are not completely centered around calories and that other factors may contributing to the average rating.
 
 ![Calories vs. Average Rating](images/calvrating.png)
 
 ### Mean and Median Ratings by Low-Calorie and High-Calorie Recipes
-We grouped recipes into `low-calorie` (≤ 500 calories) and `high-calorie` (> 500 calories) categories to compare their mean and median ratings. The bar plot below demonstrates that both categories have similar mean and median ratings, suggesting that calorie content alone does not heavily influence overall ratings.
+We grouped recipes into `low-calorie` (≤ 500 calories) and `high-calorie` (> 500 calories) categories to compare their mean and median ratings. The bar plot below illustrates that both categories have similar mean and median ratings. This would indicate that calorie count is not the heaviest influence on overall ratings.
 
 ![Mean and Median Ratings by Low-Calorie and High-Calorie Recipes](images/bivariate.png)
 
